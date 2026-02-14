@@ -33,6 +33,22 @@ const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites }) => {
         { name: "کاروبار کا استخارہ", target: "rizq-section" },
         { name: "خوابوں کی تعبیر", target: "khwab-section" }
       ]
+    },
+    {
+      title: "وظائف",
+      items: [
+        { name: "رزق کی دعا", target: "rizq-section" },
+        { name: "بیماری سے شفا", target: "sehat-section" },
+        { name: "حاجت کی دعا", target: "hajat-section" }
+      ]
+    },
+    {
+      title: "اسلامی انگوٹھیاں",
+      items: [
+        { name: "عقیق یمنی", target: "rings-section" },
+        { name: "فیروزہ", target: "rings-section" },
+        { name: "یاقوت", target: "rings-section" }
+      ]
     }
   ];
 
@@ -89,6 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites }) => {
                 </div>
               </div>
             ))}
+            <button onClick={() => scrollToId('contact')} className="hover:text-gold transition-colors urdu-font px-4 font-bold text-emerald">رابطہ</button>
           </div>
 
           <div className="flex items-center space-x-4 space-x-reverse">
@@ -119,6 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites }) => {
 
         {mobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 glass-card border-t border-gold/20 shadow-2xl py-6 flex flex-col items-center max-h-[85vh] overflow-y-auto no-scrollbar">
+             <button onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'}); setMobileMenuOpen(false);}} className="w-full py-3 text-emerald font-bold urdu-font text-lg border-b border-gold/10">ہوم</button>
             {menuItems.map(cat => (
               <div key={cat.title} className="w-full text-center py-3 border-b border-gold/10">
                 <div className="font-bold text-emerald urdu-font mb-2 text-lg px-4">{cat.title}</div>
