@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Lock, Phone, Mail, MapPin, ExternalLink, MessageCircle, Heart, ShieldCheck, Book } from 'lucide-react';
+import { Lock, Phone, Mail, Facebook, Youtube, MessageCircle, Heart, ShieldCheck, Book, Instagram } from 'lucide-react';
 
 interface FooterProps {
   onOpenAdmin?: () => void;
@@ -136,23 +136,50 @@ const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             </button>
           </div>
 
-          {/* Social Proof Motifs */}
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-3 space-x-reverse items-center ml-4">
+          {/* Enhanced Social Media Icons */}
+          <div className="flex items-center gap-6">
+            <div className="flex -space-x-3 space-x-reverse items-center ml-4 border-l border-gold/20 pl-6">
               {[1,2,3,4].map(i => (
                 <div key={i} className="w-10 h-10 rounded-full border-2 border-emerald bg-gold/20 flex items-center justify-center overflow-hidden">
                   <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Satisfied User" className="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-help" title="مطمئن سائل" />
                 </div>
               ))}
-              <div className="w-10 h-10 rounded-full border-2 border-emerald bg-gold text-[10px] font-bold text-emerald flex items-center justify-center">+10k</div>
+              <div className="w-10 h-10 rounded-full border-2 border-emerald bg-gold text-[10px] font-bold text-emerald flex items-center justify-center shadow-lg">+10k</div>
             </div>
             
             <div className="flex gap-4">
-               {['FB', 'YT', 'WA'].map(social => (
-                 <button key={social} className="w-10 h-10 rounded-xl border border-gold/20 flex items-center justify-center text-xs font-bold hover:bg-gold hover:text-emerald hover:shadow-gold-glow transition-all duration-300">
-                   {social}
-                 </button>
-               ))}
+               <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                className="w-12 h-12 rounded-2xl border border-gold/20 flex items-center justify-center text-white/50 hover:bg-[#1877F2] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(24,119,242,0.5)] transition-all duration-500 group"
+                title="Facebook"
+               >
+                 <Facebook className="w-6 h-6 group-hover:scale-110 transition-transform" />
+               </a>
+               <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                className="w-12 h-12 rounded-2xl border border-gold/20 flex items-center justify-center text-white/50 hover:bg-[#FF0000] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(255,0,0,0.5)] transition-all duration-500 group"
+                title="YouTube"
+               >
+                 <Youtube className="w-6 h-6 group-hover:scale-110 transition-transform" />
+               </a>
+               <a 
+                href="https://wa.me/923000000000" 
+                target="_blank" 
+                className="w-12 h-12 rounded-2xl border border-gold/20 flex items-center justify-center text-white/50 hover:bg-[#25D366] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-all duration-500 group"
+                title="WhatsApp"
+               >
+                 <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
+               </a>
+               <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                className="w-12 h-12 rounded-2xl border border-gold/20 flex items-center justify-center text-white/50 hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(238,42,123,0.5)] transition-all duration-500 group"
+                title="Instagram"
+               >
+                 <Instagram className="w-6 h-6 group-hover:scale-110 transition-transform" />
+               </a>
             </div>
           </div>
         </div>
