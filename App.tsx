@@ -13,6 +13,7 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import FavoritesModal from './components/FavoritesModal';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -85,6 +86,7 @@ const App: React.FC = () => {
 
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
 
       <FavoritesModal 
         isOpen={isModalOpen} 
