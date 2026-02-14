@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
             <button 
               type="submit" 
               disabled={status === 'sending'}
-              className="w-full bg-emerald text-white py-3 rounded font-bold text-base urdu-font shadow hover:bg-emerald-dark transition-all flex items-center justify-center space-x-3 space-x-reverse"
+              className="w-full bg-emerald text-white py-3 rounded font-bold text-base urdu-font shadow hover:bg-emerald-dark hover:shadow-gold-glow transition-all duration-300 flex items-center justify-center space-x-3 space-x-reverse"
             >
               <span>درخواست ارسال کریں</span>
               <Send size={18} />

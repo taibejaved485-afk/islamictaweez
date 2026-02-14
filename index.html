@@ -24,6 +24,10 @@
               amiri: ['Amiri', 'serif'],
               urdu: ['"Noto Nastaliq Urdu"', 'serif'],
               sans: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+              'gold-glow': '0 0 20px rgba(212, 175, 55, 0.5)',
+              'gold-glow-subtle': '0 0 12px rgba(212, 175, 55, 0.3)',
             }
           }
         }
@@ -85,11 +89,13 @@
         border: 1px solid rgba(212, 175, 55, 0.2);
       }
 
-      /* Gold Glow Hover */
+      /* Gold Glow Hover Effect for Cards */
+      .hover-gold-glow {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
       .hover-gold-glow:hover {
-        box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-        transform: translateY(-5px);
-        transition: all 0.4s ease;
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+        transform: translateY(-8px) scale(1.03);
       }
 
       @keyframes scroll {
@@ -118,7 +124,7 @@
       .islamic-border {
         border: 2px solid #064E3B;
         position: relative;
-        padding: 3.5rem 3rem !important; /* Increased internal padding */
+        padding: 3.5rem 3rem !important;
       }
       .islamic-border::before {
         content: '';
@@ -132,7 +138,7 @@
         border: 2px solid transparent;
         border-image: linear-gradient(to right, #D4AF37, #F9F7F2, #D4AF37) 1;
         position: relative;
-        padding: 3.5rem 3rem !important; /* Increased internal padding */
+        padding: 3.5rem 3rem !important;
         background: white;
       }
     </style>

@@ -123,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ favoriteCount, onOpenFavorites }) => {
             </button>
             <button 
               onClick={() => scrollToId('contact')}
-              className="bg-emerald text-white px-6 py-2 rounded-full text-sm urdu-font font-bold hover:bg-emerald-dark transition-all shadow-lg flex items-center gap-2 border border-gold/30"
+              className="bg-emerald text-white px-6 py-2 rounded-full text-sm urdu-font font-bold hover:bg-emerald-dark hover:shadow-gold-glow transition-all duration-300 shadow-lg flex items-center gap-2 border border-gold/30"
             >
               <Star className="w-4 h-4 text-gold fill-gold" />
               مفت استخارہ

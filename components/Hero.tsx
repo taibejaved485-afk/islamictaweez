@@ -29,13 +29,13 @@ const Hero: React.FC = () => {
           <div className="flex flex-row flex-wrap justify-center gap-6 mb-4">
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-emerald text-white px-12 py-4 rounded-full text-xl font-bold urdu-font hover:bg-emerald-dark transition-all shadow-xl border-2 border-gold/30"
+              className="bg-emerald text-white px-12 py-4 rounded-full text-xl font-bold urdu-font hover:bg-emerald-dark hover:shadow-gold-glow transition-all duration-300 shadow-xl border-2 border-gold/30 transform hover:-translate-y-1"
             >
               رابطہ کریں
             </button>
             <button 
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-gold border-2 border-gold px-12 py-4 rounded-full text-xl font-bold urdu-font hover:bg-gold/10 transition-all shadow-md"
+              className="bg-white text-gold border-2 border-gold px-12 py-4 rounded-full text-xl font-bold urdu-font hover:bg-gold/10 hover:shadow-gold-glow transition-all duration-300 shadow-md transform hover:-translate-y-1"
             >
               خدمات دیکھیں
             </button>

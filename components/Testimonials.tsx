@@ -48,7 +48,7 @@ const Testimonials: React.FC = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-3 space-x-reverse bg-emerald text-white px-8 py-3 rounded-sm font-bold urdu-font text-lg hover:bg-emerald-dark transition-all shadow-md group"
+            className="flex items-center space-x-3 space-x-reverse bg-emerald text-white px-8 py-3 rounded-sm font-bold urdu-font text-lg hover:bg-emerald-dark hover:shadow-gold-glow transition-all duration-300 shadow-md group transform hover:-translate-y-1"
           >
             <MessageCircle className="w-6 h-6 text-gold group-hover:scale-110 transition-transform" />
             <span>مزید تفصیل کے لیے واٹس ایپ کریں</span>
