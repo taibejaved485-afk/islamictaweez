@@ -1,7 +1,12 @@
 
 import React from 'react';
+import { Lock } from 'lucide-react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   return (
     <footer className="bg-emerald text-white pt-20 pb-40 font-urdu relative pattern-emerald border-t-4 border-gold">
       {/* Decorative Top Gradient for seamless transition */}
@@ -102,9 +107,21 @@ const Footer: React.FC = () => {
 
         {/* Copyright Area */}
         <div className="border-t border-gold/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/40 text-xs font-sans tracking-widest uppercase text-center md:text-right">
-            &copy; {new Date().getFullYear()} ISLAMIC TAWEEZ WEBSITE • SPIRITUAL EXCELLENCE SINCE 2004
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-white/40 text-xs font-sans tracking-widest uppercase text-center md:text-right">
+              &copy; {new Date().getFullYear()} ISLAMIC TAWEEZ WEBSITE • SPIRITUAL EXCELLENCE SINCE 2004 
+            </p>
+            {/* More visible Admin Trigger */}
+            <button 
+              onClick={onOpenAdmin} 
+              className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-gold/20 text-gold/60 hover:text-gold hover:bg-white/10 hover:border-gold/50 transition-all duration-300 text-xs urdu-font group"
+              title="Admin Login"
+            >
+              <Lock className="w-3 h-3 group-hover:scale-110 transition-transform" />
+              <span>ایڈمن لاگ ان</span>
+            </button>
+          </div>
+          
           <div className="flex gap-4 opacity-40 hover:opacity-100 transition-opacity">
             <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-xs">FB</div>
             <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-xs">YT</div>

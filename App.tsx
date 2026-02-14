@@ -14,27 +14,33 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import FavoritesModal from './components/FavoritesModal';
 import ScrollToTop from './components/ScrollToTop';
+import AdminPanel from './components/AdminPanel';
+import BlogSection from './components/BlogSection';
+import { BlogPost } from './types';
 
 const App: React.FC = () => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
 
-  // Load favorites from local storage on mount
+  // Load data from local storage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('islamic_taweez_favs');
-    if (saved) {
-      try {
-        setFavoriteIds(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse favorites");
-      }
+    const savedFavs = localStorage.getItem('islamic_taweez_favs');
+    if (savedFavs) {
+      try { setFavoriteIds(JSON.parse(savedFavs)); } catch (e) {}
+    }
+
+    const savedBlogs = localStorage.getItem('islamic_taweez_blogs');
+    if (savedBlogs) {
+      try { setBlogs(JSON.parse(savedBlogs)); } catch (e) {}
     }
   }, []);
 
-  // Save favorites to local storage
+  // Sync blogs to local storage
   useEffect(() => {
-    localStorage.setItem('islamic_taweez_favs', JSON.stringify(favoriteIds));
-  }, [favoriteIds]);
+    localStorage.setItem('islamic_taweez_blogs', JSON.stringify(blogs));
+  }, [blogs]);
 
   const toggleFavorite = (id: number) => {
     setFavoriteIds(prev => 
@@ -52,7 +58,6 @@ const App: React.FC = () => {
       <main className="flex-grow pt-10">
         <Hero />
         
-        {/* Authority Section */}
         <Stats />
 
         <div className="container max-w-6xl mx-auto px-4 py-12 section-border text-center">
@@ -62,7 +67,6 @@ const App: React.FC = () => {
           </p>
         </div>
 
-        {/* How it Works */}
         <Process />
 
         <Services 
@@ -70,21 +74,21 @@ const App: React.FC = () => {
           onToggleFavorite={toggleFavorite} 
         />
         
-        {/* Bulk Content - Wazaif */}
+        {/* Dynamic Blog Section */}
+        <BlogSection blogs={blogs} />
+
         <Wazaif />
 
         <DetailedContent />
 
-        {/* Social Proof */}
         <Testimonials />
 
-        {/* Helpful Info */}
         <FAQ />
 
         <ContactForm />
       </main>
 
-      <Footer />
+      <Footer onOpenAdmin={() => setIsAdminPanelOpen(true)} />
       <WhatsAppButton />
       <ScrollToTop />
 
@@ -94,6 +98,14 @@ const App: React.FC = () => {
         favoriteIds={favoriteIds}
         onRemove={toggleFavorite}
       />
+
+      {isAdminPanelOpen && (
+        <AdminPanel 
+          onClose={() => setIsAdminPanelOpen(false)} 
+          blogs={blogs}
+          onUpdateBlogs={setBlogs}
+        />
+      )}
     </div>
   );
 };

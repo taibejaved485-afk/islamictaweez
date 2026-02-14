@@ -15,3 +15,14 @@ export interface FormData {
   problem: string;
   phone: string;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  category: string;
+  content: string;
+  date: string;
+  tags?: string[];
+  isDraft?: boolean;
+  imageUrl?: string;
+}
