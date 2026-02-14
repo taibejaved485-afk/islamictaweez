@@ -6,7 +6,6 @@ export interface Service {
   title: string;
   urduTitle: string;
   description: string;
-  // Fix: Added React import to define React.ReactNode
   icon: React.ReactNode;
 }
 

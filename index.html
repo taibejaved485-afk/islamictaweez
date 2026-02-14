@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اسلامی تعویز | روحانی علاج اور استخارہ</title>
-    <!-- Islamic Favicon (Golden Crescent & Star) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2A14 14 0 1 0 30 16 14 14 0 0 1 16 2z' fill='%23D4AF37'/%3E%3Cpath d='M25 10l.8 2.3 2.4.1-1.9 1.5.6 2.4-1.9-1.4-1.9 1.4.6-2.4-1.9-1.5 2.4-.1z' fill='%23D4AF37'/%3E%3C/svg%3E" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +17,6 @@
             colors: {
               cream: '#FFFFFF',
               emerald: '#064E3B',
-              teal: {
-                DEFAULT: '#064E3B',
-                dark: '#032F24',
-              },
-              chocolate: '#5D4037',
               gold: '#D4AF37',
               beige: '#F9F7F2',
             },
@@ -38,56 +32,64 @@
     <style>
       html { scroll-behavior: smooth; }
       body {
-        background-color: #FFFFFF;
+        background-color: #F9F7F2;
         color: #333333;
         font-family: 'Inter', 'Noto Nastaliq Urdu', serif;
         overflow-x: hidden;
       }
 
-      /* Islamic Pattern Background Utility */
+      /* Premium Islamic Girih Pattern Background */
       .islamic-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 15h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z' fill='%23D4AF37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L60 20 L80 20 L70 40 L80 60 L60 60 L50 80 L40 60 L20 60 L30 40 L20 20 L40 20 Z' fill='%23D4AF37' fill-opacity='0.05'/%3E%3C/svg%3E");
+        background-attachment: fixed;
       }
 
-      /* Emerald Pattern for Top Bar */
-      .pattern-emerald {
-        background-color: #064E3B;
-        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z' fill='%23D4AF37' fill-opacity='0.15'/%3E%3C/svg%3E");
-      }
-
-      /* Footer/Wazaif Repeating Pattern */
-      .pattern-geometric {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M40 0l10 30h30L55 50l10 30L40 60 15 80l10-30L0 30h30z'/%3E%3C/g%3E%3C/svg%3E");
-      }
-
-      /* CRITICAL URDU TYPOGRAPHY FIX */
-      p, h1, h2, h3, h4, h5, li, .urdu-block, span.urdu-font {
+      /* Urdu Typography Fix - Higher line height to prevent Nuqta overlap */
+      p, h1, h2, h3, h4, h5, li, .urdu-font {
         font-family: 'Noto Nastaliq Urdu', serif;
-        line-height: 3.2 !important; 
+        line-height: 3.5 !important;
         overflow: visible !important;
-        display: block;
-        padding-bottom: 20px;
       }
 
-      .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; }
       .amiri-text { font-family: 'Amiri', serif; line-height: 1.6; }
 
-      .section-divider {
-        height: 20px;
-        background: radial-gradient(circle, #D4AF37 20%, transparent 20%);
-        background-size: 40px 40px;
-        background-position: center;
-        opacity: 0.2;
-        margin: 40px 0;
+      /* Gold Patterned Divider */
+      .gold-divider {
+        height: 40px;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='40' viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q 25 0, 50 20 T 100 20' stroke='%23D4AF37' stroke-width='1' fill='none' opacity='0.5'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        margin: 2rem 0;
       }
 
-      /* Premium Golden Border */
-      .golden-border-card {
-        border: 2px solid transparent;
-        border-image: linear-gradient(to right, #D4AF37, #F9F7F2, #D4AF37) 1;
+      /* Mehrab Arch Shape */
+      .mehrab-arch {
+        border-radius: 50% 50% 10px 10px / 20% 20% 10px 10px;
+        border: 2px solid #D4AF37;
         position: relative;
-        padding: 2rem;
-        background: white;
+        overflow: hidden;
+      }
+
+      .mehrab-arch::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 100px;
+        background: linear-gradient(to bottom, rgba(212, 175, 55, 0.05), transparent);
+        pointer-events: none;
+      }
+
+      /* Glassmorphism for Premium Feel */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      /* Gold Glow Hover */
+      .hover-gold-glow:hover {
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        transform: translateY(-5px);
+        transition: all 0.4s ease;
       }
 
       @keyframes scroll {
@@ -95,54 +97,35 @@
         100% { transform: translateX(-100%); }
       }
       .animate-marquee {
-        /* Speed slowed down from 80s to 180s */
         animation: scroll 180s linear infinite;
       }
 
-      .calligraphy-shadow {
-        text-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+      .pattern-emerald {
+        background-color: #064E3B;
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z' fill='%23D4AF37' fill-opacity='0.15'/%3E%3C/svg%3E");
       }
 
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      
-      #root { position: relative; }
-
-      .group:hover .dropdown-menu {
-        display: block;
-        animation: fadeIn 0.2s ease-out;
-      }
+      /* Fade In Animation for Dropdowns */
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
       }
-
-      /* Emerald Border Decoration */
-      .islamic-border {
-        border: 2px solid #064E3B;
-        position: relative;
-        padding: 2.5rem;
-      }
-      .islamic-border::before {
-        content: '';
-        position: absolute;
-        top: -8px; left: -8px; right: -8px; bottom: -8px;
-        border: 1px solid #D4AF37;
-        pointer-events: none;
+      .dropdown-animate {
+        animation: fadeIn 0.3s ease-out forwards;
       }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
-  }
-}
-</script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+      }
+    }
+    </script>
 </head>
-<body class="bg-white islamic-pattern">
+<body class="islamic-pattern">
     <div id="root"></div>
     <script type="module" src="index.tsx"></script>
 </body>

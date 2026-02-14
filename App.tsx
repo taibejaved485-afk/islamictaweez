@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -12,11 +12,41 @@ import FAQ from './components/FAQ';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import FavoritesModal from './components/FavoritesModal';
 
 const App: React.FC = () => {
+  const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Load favorites from local storage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('islamic_taweez_favs');
+    if (saved) {
+      try {
+        setFavoriteIds(JSON.parse(saved));
+      } catch (e) {
+        console.error("Failed to parse favorites");
+      }
+    }
+  }, []);
+
+  // Save favorites to local storage
+  useEffect(() => {
+    localStorage.setItem('islamic_taweez_favs', JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
+
+  const toggleFavorite = (id: number) => {
+    setFavoriteIds(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
   return (
     <div className="flex flex-col min-h-screen text-right font-urdu bg-white" dir="rtl">
-      <Navbar />
+      <Navbar 
+        favoriteCount={favoriteIds.length} 
+        onOpenFavorites={() => setIsModalOpen(true)} 
+      />
       
       <main className="flex-grow pt-10">
         <Hero />
@@ -34,7 +64,10 @@ const App: React.FC = () => {
         {/* How it Works */}
         <Process />
 
-        <Services />
+        <Services 
+          favoriteIds={favoriteIds} 
+          onToggleFavorite={toggleFavorite} 
+        />
         
         {/* Bulk Content - Wazaif */}
         <Wazaif />
@@ -52,6 +85,13 @@ const App: React.FC = () => {
 
       <Footer />
       <WhatsAppButton />
+
+      <FavoritesModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        favoriteIds={favoriteIds}
+        onRemove={toggleFavorite}
+      />
     </div>
   );
 };
