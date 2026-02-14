@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسلامی تعویز | روحانی علاج اور استخارہ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#FFFFFF',
+              emerald: '#064E3B',
+              teal: {
+                DEFAULT: '#064E3B',
+                dark: '#032F24',
+              },
+              chocolate: '#5D4037',
+              gold: '#D4AF37',
+              beige: '#F9F7F2',
+            },
+            fontFamily: {
+              amiri: ['Amiri', 'serif'],
+              urdu: ['"Noto Nastaliq Urdu"', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: #FFFFFF;
+        color: #333333;
+        font-family: 'Inter', 'Noto Nastaliq Urdu', serif;
+        overflow-x: hidden;
+      }
+
+      /* Islamic Pattern Background Utility */
+      .islamic-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 15h15l-12 9 4 15-12-9-12 9 4-15-12-9h15z' fill='%23D4AF37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      /* Emerald Pattern for Top Bar */
+      .pattern-emerald {
+        background-color: #064E3B;
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z' fill='%23D4AF37' fill-opacity='0.15'/%3E%3C/svg%3E");
+      }
+
+      /* Footer/Wazaif Repeating Pattern */
+      .pattern-geometric {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23D4AF37' fill-opacity='0.05'%3E%3Cpath d='M40 0l10 30h30L55 50l10 30L40 60 15 80l10-30L0 30h30z'/%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      /* CRITICAL URDU TYPOGRAPHY FIX */
+      p, h1, h2, h3, h4, h5, li, .urdu-block, span.urdu-font {
+        font-family: 'Noto Nastaliq Urdu', serif;
+        line-height: 3.2 !important; 
+        overflow: visible !important;
+        display: block;
+        padding-bottom: 20px;
+      }
+
+      .urdu-font { font-family: 'Noto Nastaliq Urdu', serif; }
+      .amiri-text { font-family: 'Amiri', serif; line-height: 1.6; }
+
+      .section-divider {
+        height: 20px;
+        background: radial-gradient(circle, #D4AF37 20%, transparent 20%);
+        background-size: 40px 40px;
+        background-position: center;
+        opacity: 0.2;
+        margin: 40px 0;
+      }
+
+      /* Premium Golden Border */
+      .golden-border-card {
+        border: 2px solid transparent;
+        border-image: linear-gradient(to right, #D4AF37, #F9F7F2, #D4AF37) 1;
+        position: relative;
+        padding: 2rem;
+        background: white;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+      .animate-marquee {
+        animation: scroll 80s linear infinite;
+      }
+
+      .calligraphy-shadow {
+        text-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      #root { position: relative; }
+
+      .group:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.2s ease-out;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Emerald Border Decoration */
+      .islamic-border {
+        border: 2px solid #064E3B;
+        position: relative;
+        padding: 2.5rem;
+      }
+      .islamic-border::before {
+        content: '';
+        position: absolute;
+        top: -8px; left: -8px; right: -8px; bottom: -8px;
+        border: 1px solid #D4AF37;
+        pointer-events: none;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white islamic-pattern">
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html>
