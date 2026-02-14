@@ -66,11 +66,11 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[200]">
-      {/* Top Asma-ul-Husna Slider */}
-      <div className="pattern-emerald h-10 flex items-center overflow-hidden border-b border-gold/40 shadow-inner">
+      {/* Top Asma-ul-Husna Slider - increased font size (text-lg) and bar height (h-12) */}
+      <div className="pattern-emerald h-12 flex items-center overflow-hidden border-b border-gold/40 shadow-inner">
         <div className="flex whitespace-nowrap animate-marquee">
-          <span className="amiri-text text-gold text-sm px-4 tracking-widest">{asmaUlHusna}</span>
-          <span className="amiri-text text-gold text-sm px-4 tracking-widest">{asmaUlHusna}</span>
+          <span className="amiri-text text-gold text-lg px-4 tracking-widest">{asmaUlHusna}</span>
+          <span className="amiri-text text-gold text-lg px-4 tracking-widest">{asmaUlHusna}</span>
         </div>
       </div>
 
