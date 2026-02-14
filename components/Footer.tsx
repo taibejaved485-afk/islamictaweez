@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Lock } from 'lucide-react';
+import { Lock, Phone, Mail, MapPin, ExternalLink, MessageCircle, Heart, ShieldCheck, Book } from 'lucide-react';
 
 interface FooterProps {
   onOpenAdmin?: () => void;
@@ -8,130 +8,160 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   return (
-    <footer className="bg-emerald text-white pt-20 pb-40 font-urdu relative pattern-emerald border-t-4 border-gold">
-      {/* Decorative Top Gradient for seamless transition */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-beige/20 to-transparent pointer-events-none"></div>
+    <footer className="bg-emerald text-white pt-32 pb-48 font-urdu relative overflow-hidden border-t-8 border-gold/40">
+      {/* Premium Background Overlay */}
+      <div className="absolute inset-0 pattern-emerald opacity-20 pointer-events-none"></div>
+      
+      {/* Decorative Arch Transition */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[2px] w-64 h-12 bg-gold/30 rounded-b-[60px] blur-xl opacity-50"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-8 bg-gold rounded-b-[40px] flex items-center justify-center shadow-gold-glow">
+        <div className="w-2 h-2 rounded-full bg-emerald"></div>
+      </div>
 
-      <div className="container max-w-6xl mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 text-right">
+      <div className="container max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-24">
           
-          {/* Column 1: Intro & Calligraphy */}
-          <div className="flex flex-col">
-            <div className="mb-8">
-              <span className="text-3xl font-bold text-gold border-b-2 border-gold/30 pb-4 inline-block">اسلامی تعویز</span>
+          {/* Column 1: Identity & Soul */}
+          <div className="flex flex-col space-y-8">
+            <div className="text-right">
+              <h3 className="text-3xl font-bold text-gold mb-4 border-r-4 border-gold pr-4">اسلامی تعویز</h3>
+              <p className="text-white/80 text-lg leading-[3.5] text-justify">
+                ہم پچھلی دو دہائیوں سے قرآن و سنت کے فیض سے انسانیت کی خدمت کر رہے ہیں۔ ہر نقش اور ہر وظیفہ مکمل شرعی تقاضوں کے مطابق تیار کیا جاتا ہے تاکہ آپ کی زندگی میں سکون اور برکت آئے۔
+              </p>
             </div>
-            <p className="text-white/90 text-lg leading-[3.5] mb-10 text-justify">
-              ہم قرآن و سنت کی روشنی میں امتِ مسلمہ کی خدمت کر رہے ہیں۔ ہر مسئلہ کا حل اللہ کی کتاب میں موجود ہے، ہم صرف آپ کی رہنمائی کا ذریعہ ہیں۔ یا اللہ! ہماری اس چھوٹی سی کوشش کو اپنی بارگاہ میں قبول فرما اور اسے خیر کا باعث بنا۔
-            </p>
             
-            {/* Stylized JazakAllah Motif */}
-            <div className="mt-auto py-8 border-y border-gold/20 flex flex-col items-center justify-center bg-white/5 rounded-3xl group hover:bg-white/10 transition-all duration-500">
-               <div className="mb-2 text-gold/40 text-xs tracking-[0.2em] uppercase font-sans">Spiritual Gratitude</div>
-               <span className="amiri-text text-5xl md:text-6xl text-gold font-bold drop-shadow-[0_4px_12px_rgba(212,175,55,0.6)] group-hover:scale-110 transition-transform duration-500">
-                 جزاك الله خيرا
-               </span>
+            <div className="p-6 bg-white/5 rounded-[30px] border border-gold/20 flex flex-col items-center text-center group hover:bg-white/10 transition-all duration-500">
+               <span className="amiri-text text-4xl text-gold font-bold mb-2 group-hover:scale-105 transition-transform">اللّٰہُ اَکْبَرُ</span>
+               <p className="text-xs text-gold/60 font-sans tracking-widest uppercase">Spiritual Authority</p>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-right">
-            <h4 className="text-gold font-bold text-2xl mb-10 border-r-4 border-gold/50 pr-4">فوری روابط</h4>
-            <ul className="space-y-4 text-lg text-white/95">
-              <li>
-                <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="hover:text-gold transition-all urdu-font border-b border-transparent hover:border-gold/30 leading-[3.5] py-1">
-                  مرکزی صفحہ (ہوم)
-                </button>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-gold transition-all urdu-font border-b border-transparent hover:border-gold/30 leading-[3.5] py-1">
-                  ہماری روحانی خدمات
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-gold transition-all urdu-font border-b border-transparent hover:border-gold/30 leading-[3.5] py-1">
-                  مفت آن لائن استخارہ
-                </a>
-              </li>
-              <li>
-                <a href="#dushman" className="hover:text-gold transition-all urdu-font border-b border-transparent hover:border-gold/30 leading-[3.5] py-1">
-                  دشمن سے نجات کا حل
-                </a>
-              </li>
-              <li>
-                <a href="#rizq-section" className="hover:text-gold transition-all urdu-font border-b border-transparent hover:border-gold/30 leading-[3.5] py-1">
-                  رزق میں برکت کے نقوش
-                </a>
-              </li>
+          {/* Column 2: Spiritual Services Links */}
+          <div className="text-right">
+            <h4 className="text-gold font-bold text-xl mb-10 flex items-center gap-3 justify-end">
+              روحانی خدمات <ShieldCheck className="w-5 h-5" />
+            </h4>
+            <ul className="space-y-4 text-lg">
+              {[
+                { name: "آن لائن استخارہ", id: "contact" },
+                { name: "جادو کا مکمل توڑ", id: "jadu-section" },
+                { name: "حب و محبت کے نقوش", id: "mohabbat-section" },
+                { name: "کاروباری بندش کا حل", id: "rizq-section" },
+                { name: "حفاظتِ جان و مال", id: "sehat-section" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <a href={`#${link.id}`} className="text-white/70 hover:text-gold transition-all flex items-center gap-2 justify-end group">
+                    <span className="border-b border-transparent group-hover:border-gold/30 pb-1">{link.name}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold/30 group-hover:bg-gold"></div>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Contact & Final Dua */}
-          <div className="flex flex-col">
-            <h4 className="text-gold font-bold text-2xl mb-10 border-r-4 border-gold/50 pr-4">رابطہ کی تفصیلات</h4>
-            <div className="space-y-6 text-lg">
-              <a 
-                href="tel:+923000000000"
-                className="flex items-center space-x-4 space-x-reverse bg-white/5 p-5 rounded-2xl border border-gold/10 hover:border-gold/40 hover:bg-white/10 transition-all group"
-              >
-                <div className="bg-gold/10 p-3 rounded-full group-hover:bg-gold group-hover:text-emerald transition-colors">
-                  <span className="text-2xl">☏</span>
+          {/* Column 3: Resources & Knowledge */}
+          <div className="text-right">
+            <h4 className="text-gold font-bold text-xl mb-10 flex items-center gap-3 justify-end">
+              علمی و روحانی خزانہ <Book className="w-5 h-5" />
+            </h4>
+            <ul className="space-y-4 text-lg">
+              {[
+                { name: "تازہ ترین بلاگز", id: "blogs" },
+                { name: "مجرب وظائف", id: "wazaif" },
+                { name: "خوابوں کی تعبیر", id: "khwab-section" },
+                { name: "اسمِ اعظم کی تسبیح", id: "hajat-section" },
+                { name: "اسلامی انگوٹھیاں", id: "rings-section" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <a href={`#${link.id}`} className="text-white/70 hover:text-gold transition-all flex items-center gap-2 justify-end group">
+                    <span className="border-b border-transparent group-hover:border-gold/30 pb-1">{link.name}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold/30 group-hover:bg-gold"></div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Direct Help Center */}
+          <div className="text-right space-y-8">
+            <h4 className="text-gold font-bold text-xl mb-2 flex items-center gap-3 justify-end">
+              فوری مدد <Phone className="w-5 h-5" />
+            </h4>
+            
+            <div className="space-y-4">
+              <a href="tel:+923000000000" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-gold/10 hover:border-gold/40 transition-all group">
+                <div className="flex-grow">
+                  <p className="text-xs text-gold/60 font-sans">24/7 Call Support</p>
+                  <p className="text-lg font-bold font-sans tracking-wider">+92 300 0000000</p>
                 </div>
-                <span className="font-sans font-bold text-xl tracking-wider">+92 300 0000000</span>
-              </a>
-              
-              <a 
-                href="mailto:info@islamictaweez.com"
-                className="flex items-center space-x-4 space-x-reverse bg-white/5 p-5 rounded-2xl border border-gold/10 hover:border-gold/40 hover:bg-white/10 transition-all group"
-              >
-                <div className="bg-gold/10 p-3 rounded-full group-hover:bg-gold group-hover:text-emerald transition-colors">
-                  <span className="text-2xl">✉</span>
+                <div className="bg-gold/10 p-3 rounded-xl group-hover:bg-gold group-hover:text-emerald transition-all">
+                  <Phone size={20} />
                 </div>
-                <span className="font-sans text-lg break-all">info@islamictaweez.com</span>
               </a>
 
-              {/* Enhanced Final Dua Section */}
-              <div className="mt-12 pt-10 border-t-2 border-gold/20 relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald px-4">
-                  <div className="w-2 h-2 bg-gold rotate-45"></div>
+              <a href="mailto:help@islamictaweez.com" className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-gold/10 hover:border-gold/40 transition-all group">
+                <div className="flex-grow">
+                  <p className="text-xs text-gold/60 font-sans">Email Consultations</p>
+                  <p className="text-base font-sans break-all">help@islamictaweez.com</p>
                 </div>
-                <p className="text-gold font-bold italic urdu-font text-3xl text-center leading-[3.5] drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-pulse">
-                  اللہ کریم آپ کا حامی و ناصر ہو۔ آمین
-                </p>
-                <p className="text-white/60 text-sm text-center mt-4 urdu-font leading-[3.5]">
-                  پوری امتِ محمدیہ ﷺ کی خیر و عافیت کی دعا کے ساتھ
-                </p>
+                <div className="bg-gold/10 p-3 rounded-xl group-hover:bg-gold group-hover:text-emerald transition-all">
+                  <Mail size={20} />
+                </div>
+              </a>
+
+              <div className="pt-6">
+                <p className="text-gold font-bold urdu-font text-2xl animate-pulse mb-2">اللّٰہ پاک آپ کا حامی و ناصر ہو۔</p>
+                <div className="w-full h-1 bg-gradient-to-l from-gold/40 to-transparent rounded-full"></div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright Area */}
-        <div className="border-t border-gold/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <p className="text-white/40 text-xs font-sans tracking-widest uppercase text-center md:text-right">
-              &copy; {new Date().getFullYear()} ISLAMIC TAWEEZ WEBSITE • SPIRITUAL EXCELLENCE SINCE 2004 
+        {/* Bottom Bar: Copyright & Admin Portal */}
+        <div className="border-t border-gold/20 pt-12 flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <p className="text-white/40 text-xs font-sans tracking-[0.2em] uppercase">
+              &copy; {new Date().getFullYear()} ISLAMIC TAWEEZ • ESTABLISHED 2004 
             </p>
-            {/* More visible Admin Trigger */}
+            
+            {/* Highly Visible Admin Link */}
             <button 
-              onClick={onOpenAdmin} 
-              className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-gold/20 text-gold/60 hover:text-gold hover:bg-white/10 hover:border-gold/50 transition-all duration-300 text-xs urdu-font group"
-              title="Admin Login"
+              onClick={onOpenAdmin}
+              className="group flex items-center gap-3 bg-white/5 px-5 py-2 rounded-full border border-gold/20 hover:border-gold hover:bg-gold/10 transition-all duration-500"
             >
-              <Lock className="w-3 h-3 group-hover:scale-110 transition-transform" />
-              <span>ایڈمن لاگ ان</span>
+              <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors">
+                <Lock size={12} className="text-gold group-hover:text-emerald" />
+              </div>
+              <span className="urdu-font text-sm font-bold text-gold/80 group-hover:text-gold transition-colors">ایڈمن لاگ ان پورٹل</span>
             </button>
           </div>
-          
-          <div className="flex gap-4 opacity-40 hover:opacity-100 transition-opacity">
-            <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-xs">FB</div>
-            <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-xs">YT</div>
-            <div className="w-8 h-8 rounded-full border border-gold flex items-center justify-center text-xs">WA</div>
+
+          {/* Social Proof Motifs */}
+          <div className="flex items-center gap-4">
+            <div className="flex -space-x-3 space-x-reverse items-center ml-4">
+              {[1,2,3,4].map(i => (
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-emerald bg-gold/20 flex items-center justify-center overflow-hidden">
+                  <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Satisfied User" className="w-full h-full object-cover grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-help" title="مطمئن سائل" />
+                </div>
+              ))}
+              <div className="w-10 h-10 rounded-full border-2 border-emerald bg-gold text-[10px] font-bold text-emerald flex items-center justify-center">+10k</div>
+            </div>
+            
+            <div className="flex gap-4">
+               {['FB', 'YT', 'WA'].map(social => (
+                 <button key={social} className="w-10 h-10 rounded-xl border border-gold/20 flex items-center justify-center text-xs font-bold hover:bg-gold hover:text-emerald hover:shadow-gold-glow transition-all duration-300">
+                   {social}
+                 </button>
+               ))}
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Visual Safety Margin for Urdu Script Nuqtas at the very bottom */}
-      <div className="h-20 bg-emerald/50 absolute bottom-0 left-0 right-0"></div>
+      {/* Absolute Bottom Motif */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-emerald-dark/50 to-transparent flex items-center justify-center pointer-events-none opacity-30">
+        <div className="w-full max-w-4xl h-[1px] bg-gold/30"></div>
+      </div>
     </footer>
   );
 };
